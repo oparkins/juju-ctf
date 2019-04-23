@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+
+# Install dependencies
+apt-get install -y git netcat ssh
+
+# Download files
+cd /home
+rm -rf juju-ctf
+git clone https://github.com/oparkins/juju-ctf
+cd juju-ctf/ssh-game/
+
+
+useradd -ms /bin/bash billy
+useradd -ms /bin/bash sue
+useradd -ms /bin/bash bob
+
+cp resources/billy.flag /home/billy/
+cat resources/billy.pub >> /home/billy/.ssh/authorized_keys
+chown -R billy:billy /home/billy
+chmod 700 /home/billy/.ssh/authorized_keys
+
+cp resources/sue.flag /home/sue/
+cat resources/sue.pub >> /home/sue/.ssh/authorized_keys
+chown -R sue:sue /home/sue
+chmod 700 /home/sue/.ssh/authorized_keys
+

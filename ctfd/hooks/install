@@ -10,4 +10,7 @@ chmod +x /usr/local/bin/docker-compose
 cd /home/
 git clone https://github.com/CTFd/CTFd.git
 cd CTFd
+
+# update exposure ports
+cat docker-compose.yml  | sed "s/8000:8000/80:8000/" > docker-compose.yml
 python -c "import os; f=open('.ctfd_secret_key', 'a+'); f.write(os.urandom(64)); f.close()"
