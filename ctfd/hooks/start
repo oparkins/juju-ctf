@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+# Run the Docker Container
+cd /home/CTFd/
+docker-compose up

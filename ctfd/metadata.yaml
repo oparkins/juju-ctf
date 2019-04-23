@@ -1,0 +1,14 @@
+name: ctfd
+summary: Provides the CTFd Framework for the challenege
+maintainer: Owen Parkins <oparkins@gmail.com>
+description: |
+  <Provides the CTFd Framework for the ctf challenge.>
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - web_server
+  - monitoring
+subordinate: false
+provides:
+  provides-relation:
+    interface: http
