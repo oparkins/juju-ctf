@@ -14,3 +14,9 @@ applications:
      num_units: 1
      to:
        - "lxd:ctfd/0"
+  wordpress:
+     charm: "./wordpress"
+     num_units: 1
+     to:
+       - "lxd:ctfd/0"
+

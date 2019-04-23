@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+systemctl start nginx
+systemctl start php7.2-fpm
+status-set active "Web Server Started"
