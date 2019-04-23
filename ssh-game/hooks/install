@@ -10,20 +10,25 @@ rm -rf juju-ctf
 git clone https://github.com/oparkins/juju-ctf
 cd juju-ctf/ssh-game/
 
-if [ $(id -u billy) -eq 1 ]
+if id -u billy >/dev/null 2>&1;
 then
+	echo "billy Exists"
+else
 	useradd -ms /bin/bash billy
 fi
 
-id -u sue
-if [ $? -eq 1 ]
+
+if id -u sue >/dev/null 2>&1;
 then
+	echo "sue Exists"
+else
 	useradd -ms /bin/bash sue
 fi
 
-id -u bob
-if [ $? -eq 1 ]
+if id -u bob >/dev/null 2>&1;
 then
+	echo "bob Exists"
+else
 	useradd -ms /bin/bash bob
 fi
 
