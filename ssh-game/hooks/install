@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+fail=1
 # Install dependencies
 apt-get install -y git netcat ssh
 
@@ -15,24 +15,26 @@ then
 	useradd -ms /bin/bash billy
 fi
 
-if [ $(id -u sue) -eq 1 ]
+id -u sue
+if [ $? -eq 1 ]
 then
 	useradd -ms /bin/bash sue
 fi
 
-if [ $(id -u bob) -eq 1 ]
+id -u bob
+if [ $? -eq 1 ]
 then
 	useradd -ms /bin/bash bob
 fi
 
-cp resources/billy.flag /home/billy/
 mkdir -p /home/billy/.ssh
+cp resources/billy.flag /home/billy/
 cat resources/billy.pub >> /home/billy/.ssh/authorized_keys
 chown -R billy:billy /home/billy
 chmod 700 /home/billy/.ssh/authorized_keys
 
-cp resources/sue.flag /home/sue/
 mkdir -p /home/sue/.ssh
+cp resources/sue.flag /home/sue/
 cat resources/sue.pub >> /home/sue/.ssh/authorized_keys
 chown -R sue:sue /home/sue
 chmod 700 /home/sue/.ssh/authorized_keys
