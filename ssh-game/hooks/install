@@ -1,10 +1,12 @@
 #!/bin/bash
 set -e
-fail=1
+
+status-set maintenance "Instaling required tools"
 # Install dependencies
 apt-get install -y git netcat ssh
 
 # Download files
+status-set maintenance "Cloning Repo"
 cd /home
 rm -rf juju-ctf
 git clone https://github.com/oparkins/juju-ctf
@@ -44,3 +46,4 @@ cat resources/sue.pub >> /home/sue/.ssh/authorized_keys
 chown -R sue:sue /home/sue
 chmod 700 /home/sue/.ssh/authorized_keys
 
+status-set blocked "Must start ssh service"

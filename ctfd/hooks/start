@@ -3,4 +3,7 @@ set -e
 
 # Run the Docker Container
 cd /home/CTFd/
-docker-compose up
+status-set maintenance "Starting Framework"
+docker-compose up -d
+status-set active
+

@@ -2,3 +2,4 @@
 set -e
 
 systemctl start ssh
+status-set active "Started SSH Server"
