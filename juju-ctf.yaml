@@ -1,0 +1,11 @@
+series: xenial
+description: "Deloys the CTF"
+applications:
+  ctfd:
+    charm: "local:ctfd"
+    num_units: 1
+  php-exploit:
+     charm: "local:php_exploit"
+     num_units: 1
+     to:
+       - "ctfd/0"
