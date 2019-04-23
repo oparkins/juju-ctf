@@ -7,10 +7,13 @@ apt-get install -y docker.io git
 curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+
 cd /home/
+rm -rf CTFd
 git clone https://github.com/CTFd/CTFd.git
 cd CTFd
 
 # update exposure ports
 cat docker-compose.yml  | sed "s/8000:8000/80:8000/" > docker-compose.yml
 python -c "import os; f=open('.ctfd_secret_key', 'a+'); f.write(os.urandom(64)); f.close()"
+
