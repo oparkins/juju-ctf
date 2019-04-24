@@ -54,7 +54,8 @@ fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 }
 EOF
 
-rm -rf  /etc/nginx/sites-enabled/$WP_DOMAIN
+
+rm -rf  /etc/nginx/sites-enabled/*
 ln -s /etc/nginx/sites-available/$WP_DOMAIN /etc/nginx/sites-enabled/
 
 nginx -t
