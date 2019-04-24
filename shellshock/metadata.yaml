@@ -1,0 +1,15 @@
+name: shellshock
+summary: Provides the shellshock vulnerable machine for the challenege
+maintainer: Jessica Rooney <jessabyte@gmail.com>
+description: |
+  <Provides the shellshock vulnerable machine challenge.>
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - security
+  - network
+  - web_server
+subordinate: false
+provides:
+  provides-relation:
+    interface: http
