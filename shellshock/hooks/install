@@ -14,6 +14,6 @@ cd /home/
 rm -rf vulnhub-master
 wget https://github.com/vulhub/vulhub/archive/master.zip -O vulhub-master.zip
 unzip vulhub-master.zip
-cd vulhub-master/bash/shellshock
+cd vulhub-master/
 
 status-set blocked "Waiting to start docker container"
