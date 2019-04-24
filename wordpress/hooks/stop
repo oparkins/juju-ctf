@@ -1,4 +1,6 @@
 #!/bin/bash
 set -e
 
+systemctl stop mysql
 systemctl stop nginx
+systemctl stop php7.2-fpm
