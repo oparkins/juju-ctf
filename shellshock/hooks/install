@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-status-set maintenance "Instaling required tools"
-apt-get install -y docker.io git
+status-set maintenance "Installing required tools"
+apt-get install -y docker.io git curl unzip wget
 
 status-set maintenance "Downloading Helper Repository"
 # install docker compose
