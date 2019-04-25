@@ -27,12 +27,16 @@ applications:
     num_units: 1
   attack:
     charm: "./attack"
-    num_units: 6
+    num_units: 3
     to:
-      - "lxd:ctfd"
-      - "lxd:ctfd"
       - "lxd:ctfd"
       - "lxd:wordpress"
       - "lxd:heartbleed"
+  attack2:
+    charm: "./attack"
+    num_units: 3
+    to:
+      - "lxd:ctfd"
+      - "lxd:wordpress"
       - "lxd:heartbleed"
 
