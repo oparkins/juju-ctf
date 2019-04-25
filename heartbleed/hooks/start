@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+# Run the Docker Container
+status-set maintenance "Starting Framework"
+docker run -d andrewmichaelsmith/docker-heartbleed
+status-set active

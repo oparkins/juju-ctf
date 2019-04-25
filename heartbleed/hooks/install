@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+status-set maintenance "Installing required tools"
+apt-get install -y docker.io git curl unzip wget
+
+status-set maintenance "Downloading Helper Repository"
+# install docker compose
+curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+# set up shellshock docker
+docker pull andrewmichaelsmith/docker-heartbleed
+
+status-set blocked "Waiting to start docker container"
