@@ -8,17 +8,15 @@ applications:
      charm: "./php-exploit"
      num_units: 1
      to:
-       - "lxd:host2"
+       - "lxd:wordpress"
   ssh-game:
      charm: "./ssh-game"
      num_units: 1
      to:
-       - "lxd:host2"
+       - "lxd:wordpress"
   wordpress:
      charm: "./wordpress"
      num_units: 1
-     to:
-       - "lxd:host2"
   shellshock:
      charm: "./shellshock"
      num_units: 1
