@@ -14,7 +14,7 @@ status-set maintenance "Instaling Openvas"
 # openvas
 add-apt-repository ppa:mrazavi/openvas
 apt update
-apt install -y python-software-properties sqlite3 openvas
+apt install -y python-software-properties sqlite3
 
 status-set active "Ready for Users"
 

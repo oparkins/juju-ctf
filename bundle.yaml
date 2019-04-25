@@ -21,7 +21,7 @@ applications:
     charm: "./shellshock"
     num_units: 1
     to:
-      - "lxd:heartbleed"
+      - "heartbleed"
   heartbleed:
     charm: "./heartbleed"
     num_units: 1
