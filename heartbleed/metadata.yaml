@@ -1,0 +1,15 @@
+name: heartbleed
+summary: Provides the heartbleed vulnerable machine for the challenege
+maintainer: Jessica Rooney <jessabyte@gmail.com>
+description: |
+  <Provides the heartbleed vulnerable machine challenge.>
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - security
+  - network
+  - web_server
+subordinate: false
+provides:
+  provides-relation:
+    interface: http
