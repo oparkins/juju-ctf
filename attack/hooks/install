@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+apt-get update
+
+status-set maintenance "Instaling Tools"
+apt-get install -y nmap python python-scapy netcat curl wireshark software-properties-common
+
+status-set maintenance "Instaling Metasploit"
+# Install Metasploit
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+
+status-set maintenance "Instaling Openvas"
+# openvas
+add-apt-repository ppa:mrazavi/openvas
+apt update
+apt install -y python-software-properties sqlite3 openvas
+
+status-set active "Ready for Users"
+

@@ -5,26 +5,34 @@ applications:
     charm: "./ctfd"
     num_units: 1
   php-exploit:
-     charm: "./php-exploit"
-     num_units: 1
-     to:
-       - "lxd:wordpress"
+    charm: "./php-exploit"
+    num_units: 1
+    to:
+      - "lxd:wordpress"
   ssh-game:
-     charm: "./ssh-game"
-     num_units: 1
-     to:
-       - "lxd:wordpress"
+    charm: "./ssh-game"
+    num_units: 1
+    to:
+      - "lxd:wordpress"
   wordpress:
-     charm: "./wordpress"
-     num_units: 1
+    charm: "./wordpress"
+    num_units: 1
   shellshock:
-     charm: "./shellshock"
-     num_units: 1
-     to:
-       - "ctfd"
+    charm: "./shellshock"
+    num_units: 1
+    to:
+      - "lxd:heartbleed"
   heartbleed:
-     charm: "./heartbleed"
-     num_units: 1
-     to:
-       - "ctfd"
+    charm: "./heartbleed"
+    num_units: 1
+  attack:
+    charm: "./attack"
+    num_units: 6
+    to:
+      - "lxd:ctfd"
+      - "lxd:ctfd"
+      - "lxd:ctfd"
+      - "lxd:wordpress"
+      - "lxd:heartbleed"
+      - "lxd:heartbleed"
 
