@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
 
-docker stop ctfd
-docker rm ctfd
+docker stop heartbleed
+docker rm heartbleed

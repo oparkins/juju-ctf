@@ -1,5 +1,7 @@
 #!/bin/bash
 set -e
 
-docker stop ctfd
-docker rm ctfd
+cd /home/CTFd/
+status-set maintenance "Stopping Framework"
+docker-compose down
+

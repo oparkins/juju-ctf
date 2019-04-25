@@ -55,13 +55,13 @@ fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 EOF
 
 
-rm -rf  /etc/nginx/sites-enabled/*
+rm -rf  /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/$WP_DOMAIN /etc/nginx/sites-enabled/
 
 nginx -t
 
 systemctl start mysql
-systemctl start nginx
+systemctl restart nginx
 systemctl start php7.2-fpm
 
 mysql -u root -p$MYSQL_ROOT_PASSWORD <<EOF

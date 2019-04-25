@@ -3,7 +3,6 @@ set -e
 
 # Run the Docker Container
 cd /home/vulhub-master/bash/shellshock
-chmod +x 
 status-set maintenance "Starting Framework"
 docker-compose build
 docker-compose up -d

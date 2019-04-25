@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
 
-docker stop ctfd
-docker rm ctfd
+cd /home/vulhub-master/bash/shellshock
+status-set maintenance "Stopping Framework"
+docker-compose down
